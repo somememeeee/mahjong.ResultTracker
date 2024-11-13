@@ -8,17 +8,27 @@
 </head>
 <body>
     <h1>四麻・三麻モード切替アプリ</h1>
+    <!-- 四麻と三麻の打ち始めのポイント入力欄 -->
+    <div>
+        <label for="fourStartingPoints">四麻の打ち始めポイント (現在の点数/目標点数):</label>
+        <input type="text" id="fourStartingPoints" placeholder="200/500" oninput="updateCurrentPoints('four')">
+    </div>
+    <div>
+        <label for="threeStartingPoints">三麻の打ち始めポイント (現在の点数/目標点数):</label>
+        <input type="text" id="threeStartingPoints" placeholder="200/500" oninput="updateCurrentPoints('three')">
+    </div>
     
+
     <!-- モード選択ボタン -->
     <div>
         <button onclick="selectMode('four')">四麻</button>
         <button onclick="selectMode('three')">三麻</button>
     </div>
 
-    <!-- 現在のポイント入力 -->
+    <!-- 増減ポイント入力欄 -->
     <div>
-        <label for="currentPoints">現在のポイント:</label>
-        <input type="number" id="currentPoints" value="0">
+        <label for="currentPoints">増減ポイント:</label>
+        <input type="text" id="currentPoints" placeholder="0">
     </div>
 
     <!-- 着順入力ボタン -->
@@ -66,17 +76,19 @@
         <h2>結果</h2>
         <div id="fourPlayerResults">
             <h3>四麻</h3>
-            <div id="fourAverageRank">平均着順: -</div>
-            <div id="fourRankHistory">着順履歴: -</div>
-            <div id="fourRankCount">着順回数: -</div>
-            <div id="fourTotalPoints">ポイント合計: -</div>
+            <div id="fourAverageRank">平均着順: 0</div>
+            <div id="fourRankHistory">着順履歴: </div>
+            <div id="fourRankCount">着順回数: 0-0-0-0</div>
+            <div id="fourTotalPoints">ポイント合計: 0</div>
+            <div id="fourCurrentPoints">現在のポイント: -</div> <!-- 追加 -->
         </div>
         <div id="threePlayerResults">
             <h3>三麻</h3>
-            <div id="threeAverageRank">平均着順: -</div>
-            <div id="threeRankHistory">着順履歴: -</div>
-            <div id="threeRankCount">着順回数: -</div>
+            <div id="threeAverageRank">平均着順: 0</div>
+            <div id="threeRankHistory">着順履歴: </div>
+            <div id="threeRankCount">着順回数: 0-0-0</div>
             <div id="threeTotalPoints">ポイント合計: -</div>
+            <div id="threeCurrentPoints">現在のポイント: -</div> <!-- 追加 -->
         </div>
     </div>
 
