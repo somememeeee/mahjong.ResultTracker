@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四麻・三麻モード切替アプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>四麻・三麻モード切替アプリ</h1>
+    
+    <!-- モード選択ボタン -->
+    <div>
+        <button onclick="selectMode('four')">四麻</button>
+        <button onclick="selectMode('three')">三麻</button>
+    </div>
+
+    <!-- 現在のポイント入力 -->
+    <div>
+        <label for="currentPoints">現在のポイント:</label>
+        <input type="number" id="currentPoints" value="0">
+    </div>
+
+    <!-- 着順入力ボタン -->
+    <div id="rankButtons">
+        <button onclick="setRank(1)">1位</button>
+        <button onclick="setRank(2)">2位</button>
+        <button onclick="setRank(3)">3位</button>
+        <button id="fourthRankButton" onclick="setRank(4)">4位</button>
+    </div>
+
+    <!-- 電卓風ポイント入力 -->
+    <div id="calculator">
+        <table>
+            <tr>
+                <td><button onclick="inputPoint('-')">-</button></td>
+                <td><button onclick="inputPoint('')">空白</button></td>
+                <td><button onclick="clearPoint()">C</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="inputPoint('7')">7</button></td>
+                <td><button onclick="inputPoint('8')">8</button></td>
+                <td><button onclick="inputPoint('9')">9</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="inputPoint('4')">4</button></td>
+                <td><button onclick="inputPoint('5')">5</button></td>
+                <td><button onclick="inputPoint('6')">6</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="inputPoint('1')">1</button></td>
+                <td><button onclick="inputPoint('2')">2</button></td>
+                <td><button onclick="inputPoint('3')">3</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="inputPoint('0')">0</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 送信ボタン -->
+    <button onclick="submitData()">送信</button>
+
+    <!-- 結果表示エリア -->
+    <div id="results">
+        <h2>結果</h2>
+        <div id="averageRank">平均着順: -</div>
+        <div id="rankHistory">着順履歴: -</div>
+        <div id="rankCount">着順回数: -</div>
+        <div id="totalPoints">ポイント合計: -</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
